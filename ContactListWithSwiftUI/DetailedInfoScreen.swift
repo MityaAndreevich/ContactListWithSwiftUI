@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct DetailedInfoScreen: View {
+    let contact: Person
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("\(contact.fullName)")
+                .font(.largeTitle)
+            .fontWeight(.bold)
+            List {
+                HStack {
+                    Spacer()
+                    Image(systemName: "person")
+                        .resizable()
+                        .frame(width: 120, height: 120)
+                    Spacer()
+                }
+                HStack {
+                    Image(systemName: "phone")
+                    Text("\(contact.phoneNumber)")
+                }
+                HStack {
+                    Image(systemName: "tray")
+                    Text("\(contact.email)")
+                }
+            }
+        }
     }
 }
 
 struct DetailedInfoScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedInfoScreen()
+        DetailedInfoScreen(contact: Person.getPersonsList().first!)
     }
 }

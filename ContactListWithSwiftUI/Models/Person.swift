@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Person {
+struct Person: Identifiable {
+    let id: Int
     let name: String
     let surname: String
     let phoneNumber: String
@@ -34,6 +35,7 @@ extension Person {
         
         for index in 0..<iterationCount {
             let person = Person(
+                id: index,
                 name: names[index],
                 surname: surnames[index],
                 phoneNumber: phoneNumbers[index],
