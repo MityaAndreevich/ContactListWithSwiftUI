@@ -11,16 +11,19 @@ struct NumbersScreen: View {
     let contacts: [Person]
     
     var body: some View {
-        List {
-            ForEach(contacts) { contact in
-                Section(header: Text("\(contact.fullName)")) {
-                    ContactRow(contact: contact.phoneNumber, image: "phone")
-                    ContactRow(contact: contact.email, image: "tray")
+        NavigationView {
+            List {
+                ForEach(contacts) { contact in
+                    Section(header: Text("\(contact.fullName)")) {
+                        ContactRow(contact: contact.phoneNumber, image: "phone")
+                        ContactRow(contact: contact.email, image: "tray")
+                    }
                 }
             }
+            .navigationTitle("Contact List")
         }
     }
-
+    
     struct NumbersScreen_Previews: PreviewProvider {
         static var previews: some View {
             NumbersScreen(contacts: Person.getPersonsList())

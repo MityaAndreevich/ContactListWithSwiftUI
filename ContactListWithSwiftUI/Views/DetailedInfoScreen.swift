@@ -11,24 +11,24 @@ struct DetailedInfoScreen: View {
     let contact: Person
     
     var body: some View {
-            List {
-                HStack {
-                    Spacer()
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 120, height: 120)
-                    Spacer()
-                }
-                HStack {
-                    Image(systemName: "phone")
-                    Text("\(contact.phoneNumber)")
-                }
-                HStack {
-                    Image(systemName: "tray")
-                    Text("\(contact.email)")
-                }
+        List {
+            HStack {
+                Spacer()
+                Image(systemName: "person")
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                Spacer()
             }
-            .navigationTitle("\(contact.fullName)")
+            HStack {
+                Image(systemName: "phone")
+                Text("\(contact.phoneNumber)")
+            }
+            HStack {
+                Image(systemName: "tray")
+                Text("\(contact.email)")
+            }
+        }
+        .navigationTitle("\(contact.fullName)")
     }
 }
 
