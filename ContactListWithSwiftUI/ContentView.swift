@@ -9,17 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            ContactsScreen()
-                .tabItem {
-                    Image(systemName: "person.3.fill")
-                    Text("Contacts")
+        NavigationView {
+            ZStack {
+                ContactsScreen()
+                TabView {
+                    ContactsScreen()
+                        .tabItem {
+                            Image(systemName: "person.3.fill")
+                            Text("Contacts")
+                        }
+                    NumbersScreen()
+                        .tabItem {
+                            Image(systemName: "phone.fill")
+                            Text("Numbers")
+                        }
                 }
-            NumbersScreen()
-                .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Numbers")
-                }
+            }
+            .navigationTitle("Contact List")
         }
     }
 }
