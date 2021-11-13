@@ -19,11 +19,12 @@ struct ContentView: View {
                         Image(systemName: "person.3.fill")
                         Text("Contacts")
                     }
-                NumbersScreen()
+                NumbersScreen(contacts: contactList)
                     .tabItem {
                         Image(systemName: "phone.fill")
                         Text("Numbers")
                     }
+                    .padding()
             }
         }
     }

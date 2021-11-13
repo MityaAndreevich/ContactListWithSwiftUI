@@ -17,7 +17,8 @@ struct ContactsScreen: View {
                 NavigationLink(destination: DetailedInfoScreen(contact: contact)) {
                     Text("\(contact.fullName)")
                 }
-                }
+                .padding()
+            }
             .navigationTitle("Contact List")
             .listStyle(.plain)
         }
