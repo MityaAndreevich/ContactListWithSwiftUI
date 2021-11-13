@@ -14,7 +14,9 @@ struct ContactsScreen: View {
     var body: some View {
         NavigationView {
             List(contactList) { contact in
+                NavigationLink(destination: DetailedInfoScreen(contact: contact)) {
                     Text("\(contact.fullName)")
+                }
                 }
             .navigationTitle("Contact List")
             .listStyle(.plain)

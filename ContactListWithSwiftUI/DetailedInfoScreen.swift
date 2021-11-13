@@ -11,10 +11,6 @@ struct DetailedInfoScreen: View {
     let contact: Person
     
     var body: some View {
-        VStack {
-            Text("\(contact.fullName)")
-                .font(.largeTitle)
-            .fontWeight(.bold)
             List {
                 HStack {
                     Spacer()
@@ -32,7 +28,7 @@ struct DetailedInfoScreen: View {
                     Text("\(contact.email)")
                 }
             }
-        }
+            .navigationTitle("\(contact.fullName)")
     }
 }
 
