@@ -11,21 +11,17 @@ struct ContentView: View {
     let contactList = Person.getPersonsList()
     
     var body: some View {
-        ZStack {
+        TabView {
             ContactsScreen(contactList: contactList)
-            TabView {
-                ContactsScreen(contactList: contactList)
-                    .tabItem {
-                        Image(systemName: "person.3.fill")
-                        Text("Contacts")
-                    }
-                NumbersScreen(contacts: contactList)
-                    .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Numbers")
-                    }
-                    .padding()
-            }
+                .tabItem {
+                    Image(systemName: "person.3.fill")
+                    Text("Contacts")
+                }
+            NumbersScreen(contacts: contactList)
+                .tabItem {
+                    Image(systemName: "phone.fill")
+                    Text("Numbers")
+                }
         }
     }
 }

@@ -38,4 +38,6 @@ class DataManager {
         "Lazy@Ass", "Cri@ro", "Tiny@Cup",
         "Lucky@Eagle"
     ]
+    
+    private init() {}
 }

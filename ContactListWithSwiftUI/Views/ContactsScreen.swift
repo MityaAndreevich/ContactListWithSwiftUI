@@ -14,13 +14,11 @@ struct ContactsScreen: View {
     var body: some View {
         NavigationView {
             List(contactList) { contact in
-                NavigationLink(destination: DetailedInfoScreen(contact: contact)) {
-                    Text("\(contact.fullName)")
-                }
-                .padding()
+                NavigationLink(contact.fullName,
+                               destination: DetailedInfoScreen(contact: contact))
             }
-            .navigationTitle("Contact List")
             .listStyle(.plain)
+            .navigationTitle("Contact List")
         }
     }
 }

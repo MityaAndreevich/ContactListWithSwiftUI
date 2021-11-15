@@ -14,21 +14,18 @@ struct DetailedInfoScreen: View {
         List {
             HStack {
                 Spacer()
-                Image(systemName: "person")
+                Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 120, height: 120)
                 Spacer()
             }
-            HStack {
-                Image(systemName: "phone")
-                Text("\(contact.phoneNumber)")
-            }
-            HStack {
-                Image(systemName: "tray")
-                Text("\(contact.email)")
-            }
+            ContactRow(contact: contact.phoneNumber, image: "phone")
+            ContactRow(contact: contact.email, image: "tray")
+            // or Label can be used instead
+            // Label(contact.phoneNumber, systemImage: "phone")
+            // Label(contact.email, systemImage: "tray")
         }
-        .navigationTitle("\(contact.fullName)")
+        .navigationTitle(contact.fullName)
     }
 }
 

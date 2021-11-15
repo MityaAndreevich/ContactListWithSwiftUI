@@ -12,14 +12,14 @@ struct NumbersScreen: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(contacts) { contact in
-                    Section(header: Text("\(contact.fullName)")) {
-                        ContactRow(contact: contact.phoneNumber, image: "phone")
-                        ContactRow(contact: contact.email, image: "tray")
-                    }
+            List(contacts) { contact in
+                Section(header: Text(contact.fullName)) {
+                    ContactRow(contact: contact.phoneNumber, image: "phone")
+                    ContactRow(contact: contact.email, image: "tray")
                 }
+               // .textCase(.none)
             }
+            .listStyle(.plain)
             .navigationTitle("Contact List")
         }
     }
